@@ -1,0 +1,5 @@
+#properties file to connect any database
+dbpassword=""
+database=jdbc:h2:tcp://localhost/~/online
+dbuser=sa
+driver=org.h2.Driver

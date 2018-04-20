@@ -1,0 +1,38 @@
+
+Apr 19, 2018 08:39:43.87 NEW SESSION
+Apr 19, 2018 08:39:43.87 [13956:604:0419/083943.864:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+Apr 19, 2018 09:01:56.59 [2940:7252:0419/090156.596:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+
+Apr 19, 2018 16:19:34.85 NEW SESSION
+Apr 19, 2018 16:19:34.85 [11476:9600:0419/161934.847:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+Apr 19, 2018 16:42:40.26 [12392:5648:0419/164240.265:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+
+Apr 19, 2018 18:06:20.98 NEW SESSION
+Apr 19, 2018 18:06:20.98 [10432:8164:0419/180620.950:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+Apr 19, 2018 18:52:27.65 [10432:13300:0419/185227.638:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:52:27.65 [10432:13300:0419/185227.654:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:52:42.69 [10432:13300:0419/185242.694:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:52:42.69 [10432:13300:0419/185242.694:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:52:42.69 [10432:1212:0419/185242.694:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+Apr 19, 2018 18:53:26.51 [10432:13300:0419/185326.519:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:53:41.55 [10432:13300:0419/185341.553:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:53:41.56 [10432:1212:0419/185341.553:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+Apr 19, 2018 18:54:49.42 [10432:13300:0419/185449.427:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:55:04.47 [10432:13300:0419/185504.474:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:55:04.47 [10432:1212:0419/185504.474:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+Apr 19, 2018 18:57:18.31 [10432:13300:0419/185718.294:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:57:33.34 [10432:13300:0419/185733.341:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+Apr 19, 2018 18:57:33.34 [10432:1212:0419/185733.341:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+Apr 19, 2018 19:02:12.02 [10432:13300:0419/190212.018:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 19:02:12.26 [10432:13300:0419/190212.261:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 19:02:12.50 [10432:13300:0419/190212.505:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 19:02:13.29 [10432:13300:0419/190213.292:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 20:14:16.25 [8976:11820:0419/201416.242:ERROR:cache_util_win.cc(20)] Unable to move the cache: 5
+Apr 19, 2018 20:14:16.25 [8976:11820:0419/201416.258:ERROR:cache_util.cc(134)] Unable to move cache folder C:\Users\mruser\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache to C:\Users\mruser\AppData\Local\Google\Chrome\User Data\ShaderCache\old_GPUCache_000
+Apr 19, 2018 20:14:16.25 [8976:11820:0419/201416.258:ERROR:disk_cache.cc(169)] Unable to create cache
+Apr 19, 2018 20:14:16.25 [8976:11820:0419/201416.258:ERROR:shader_disk_cache.cc(601)] Shader Cache Creation failed: -2
+Apr 19, 2018 20:14:16.58 [8976:3812:0419/201416.586:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+Apr 19, 2018 20:27:38.18 [8976:11820:0419/202738.178:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 20:27:38.40 [8976:11820:0419/202738.402:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 20:27:38.69 [8976:11820:0419/202738.696:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+Apr 19, 2018 20:27:39.39 [8976:11820:0419/202739.394:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED

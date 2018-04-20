@@ -1,0 +1,43 @@
+package com.niit.skillmapper.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.niit.skillmapper.model.User;
+import com.niit.skillmapper.repository.UserRepository;
+
+public class UserRepositoryTest {
+
+	UserRepository userrepository;
+	@Before
+    public void setUp() throws Exception {
+	 userrepository=new UserRepository();
+	}
+	
+	@Test
+	public void testAuthUser()
+	{
+				
+		assertEquals("Failed to validate the user!", true,userrepository.authenticate("akhil@niit.com", "password"));	
+	}
+
+	 @Test
+	    public void addUserTest() {
+		 User user = new User();
+	     user.setEmployeeId(18774);
+	     user.setEmployeeName("chhaya");
+	     user.setDeptname("CEB");
+	     user.setEmail("chhaya.nikam@niit.com");
+	     user.setRole_type("Employee");
+	     user.setEmpPassword("password@123");	     		 
+		 assertEquals("Failed to add the user!", true, userrepository.add(user));	
+	    }
+	 
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

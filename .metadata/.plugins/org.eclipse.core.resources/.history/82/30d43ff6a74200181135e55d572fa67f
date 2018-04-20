@@ -1,0 +1,32 @@
+package com.niit.skillmapper.utility;
+import static org.junit.Assert.assertEquals;
+
+import com.niit.skillmapper.model.User;
+import com.niit.skillmapper.repository.UserRepository;
+
+public class Main {
+	
+
+	public static void main(String args[]) {
+		UserRepository userrepository=new UserRepository();
+		if(userrepository.authenticate("akhil@niit.com", "password"))
+		{
+			System.out.println("Welcome user");
+		}
+		else
+		{
+			System.out.println("Access Denied");
+		}
+		
+		 User user = new User();
+	     user.setEmployeeId(18774);
+	     user.setEmployeeName("chhaya");
+	     user.setDeptname("CEB");
+	     user.setEmail("chhaya.nikam@niit.com");
+	     user.setRole_type("Employee");
+	     user.setEmpPassword("password@123");	
+	    
+	     userrepository.add(user);	
+	
+	}
+}

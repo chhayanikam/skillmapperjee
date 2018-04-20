@@ -1,0 +1,10 @@
+package com.niit.skillmapper.model;
+
+public class UserInfo {
+	private int employeeId;
+	private String employeeName;
+	private String email;
+	private String empPassword;	
+	private String deptname;
+	private String role_type;
+}

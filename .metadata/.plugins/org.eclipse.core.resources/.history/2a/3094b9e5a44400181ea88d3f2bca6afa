@@ -1,0 +1,5 @@
+package com.niit.skillmapper.repository;
+
+public class SkillRepository {
+
+}

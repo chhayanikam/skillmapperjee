@@ -1,0 +1,65 @@
+package com.niit.skillmapper.model;
+
+public class Skills {
+	private int skillid;
+	private int employeeid ;
+	private String skilltype;
+	private String skilldesc;
+	private String certifications;
+	private int teachinghrs;
+	private int studentstrained;
+	private int feedbackrating ;
+	
+	public int getSkillid() {
+		return skillid;
+	}
+	public void setSkillid(int skillid) {
+		this.skillid = skillid;
+	}
+	public int getEmployeeid() {
+		return employeeid;
+	}
+	public void setEmployeeid(int employeeid) {
+		this.employeeid = employeeid;
+	}
+	public String getSkilltype() {
+		return skilltype;
+	}
+	public void setSkilltype(String skilltype) {
+		this.skilltype = skilltype;
+	}
+	public String getSkilldesc() {
+		return skilldesc;
+	}
+	public void setSkilldesc(String skilldesc) {
+		this.skilldesc = skilldesc;
+	}
+	public String getCertifications() {
+		return certifications;
+	}
+	public void setCertifications(String certifications) {
+		this.certifications = certifications;
+	}
+	public int getTeachinghrs() {
+		return teachinghrs;
+	}
+	public void setTeachinghrs(int teachinghrs) {
+		this.teachinghrs = teachinghrs;
+	}
+	public int getStudentstrained() {
+		return studentstrained;
+	}
+	public void setStudentstrained(int studentstrained) {
+		this.studentstrained = studentstrained;
+	}
+	public int getFeedbackrating() {
+		return feedbackrating;
+	}
+	public void setFeedbackrating(int feedbackrating) {
+		this.feedbackrating = feedbackrating;
+	}
+	
+	
+	
+	
+}

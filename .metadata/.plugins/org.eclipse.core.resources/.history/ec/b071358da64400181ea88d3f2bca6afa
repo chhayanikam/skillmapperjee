@@ -1,0 +1,18 @@
+package com.niit.skillmapper.repository;
+
+import java.sql.*;
+
+import com.niit.skillmapper.dao.UserDAO;
+import com.niit.skillmapper.model.User;
+import com.niit.skillmapper.utility.DbConnect;
+
+public class UserRepository implements UserDAO {
+	DbConnect db;
+	Connection con;
+
+	public UserRepository() {
+		db = new DbConnect();
+		con = db.getConnection();
+	}
+
+}

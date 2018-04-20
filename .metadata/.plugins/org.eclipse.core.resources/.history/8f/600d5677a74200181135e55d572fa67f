@@ -1,0 +1,18 @@
+package com.niit.skillmapper.utility;
+import com.niit.skillmapper.repository.UserRepository;
+
+public class Main {
+	
+
+	public static void main(String args[]) {
+		UserRepository userrepository=new UserRepository();
+		if(userrepository.authenticate("akhil@niit.com", "password"))
+		{
+			System.out.println("Welcome user");
+		}
+		else
+		{
+			System.out.println("Access Denied");
+		}
+	}
+}

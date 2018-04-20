@@ -1,0 +1,99 @@
+package com.niit.skillmapper.utility;
+
+import java.sql.*;
+import java.util.*;
+import java.io.*;
+
+public class DbConnect {
+	private String database;
+	private String dbuser;
+	private String dbpassword;
+	private String driver;
+	Connection con;
+
+	public String getDriver() {
+		return driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getDatabase() {
+		return database;
+	}
+
+	public String getDbuser() {
+		return dbuser;
+	}
+
+	public String getDbpassword() {
+		return dbpassword;
+	}
+
+	// method to load the data from properties file
+	public void readPropertiesFile() {
+		Properties prop = new Properties();
+		InputStream input = null;
+		try {
+			input = new FileInputStream("E:\\SkillMapper\\SkillMapperConsole\\config.properties");
+
+			// load a properties file
+			prop.load(input);
+
+			// get the property value and print it out
+			this.database = prop.getProperty("database");
+			this.dbuser = prop.getProperty("dbuser");
+			this.dbpassword = prop.getProperty("dbpassword");
+			this.driver = prop.getProperty("driver");
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+
+	// establish the database connection
+	public Connection getConnection() {
+		
+		try {
+			readPropertiesFile();
+			// step1 load the driver class
+			Class.forName(this.getDriver());
+
+			// step2 create the connection object
+			con = DriverManager.getConnection(this.getDatabase(), this.getDbuser(), this.getDbpassword());
+		
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return con;
+	}
+
+	//common method to read data from any table
+	public ResultSet executeQuery(Connection con,String query) {
+		ResultSet rs=null;
+		Statement stmt;
+		try {
+			stmt = con.createStatement();
+			// step4 execute query
+			 rs = stmt.executeQuery(query);
+			while (rs.next())
+				System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return rs;
+	}
+	
+}

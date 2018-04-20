@@ -1,0 +1,99 @@
+package com.niit.skillmapper.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.niit.skillmapper.model.User;
+import com.niit.skillmapper.repository.UserRepository;
+
+@WebServlet("/RegistrationController")
+public class RegistrationController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	// Keep a set of strings to record form processing errors.
+	List errorMsgs = new LinkedList();
+	UserRepository userrepository = new UserRepository();
+
+	public RegistrationController() {
+		super();
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		HttpSession session=request.getSession();
+		// Store this set in the request scope, in case we need to
+		// send the ErrorPage view.
+		request.setAttribute("errorMsgs", errorMsgs);
+		
+		String profileId = request.getParameter("profileId").trim();
+		String employeeId = request.getParameter("employeeId").trim();
+		String employeeName = request.getParameter("employeeName").trim();
+		String empPassword = request.getParameter("emppassword").trim();
+		String deptname = request.getParameter("deptname").trim();
+		String email = request.getParameter("email").trim();
+		String role_type = request.getParameter("role_type").trim();
+		System.out.println(profileId+" " + employeeId + employeeName + empPassword + deptname + email + role_type);
+		int empid = -1;
+		/*
+		try {
+			empid = Integer.parseInt(employeeId);
+		} catch (NumberFormatException nfe) {
+			errorMsgs.add("The employee Id must be a positive integer.");
+		}*/
+		// Verify form parameters
+		if ((empid != -1) && ((empid < 1) || (empid > 6))) {
+			errorMsgs.add("The employee field must within 1 to 9999");
+		}
+		if (role_type.equals("UNKNOWN")) {
+			errorMsgs.add("Please select a role.");
+		}
+		if (employeeName.length() == 0) {
+			errorMsgs.add("Please enter the EMployee Name.");
+		}
+		if (deptname.length() == 0) {
+			errorMsgs.add("Please enter the Department Name.");
+		}
+/*		if(ev.validateEmail(email)==false){
+			errorMsgs.add("Please enter the Valid email.");
+		}
+*/		// Send the ErrorPage view if there were errors
+		if (!errorMsgs.isEmpty()) {
+			request.getRequestDispatcher(getServletContext().getInitParameter("views")+"error.jsp").include(request, response);
+			//RequestDispatcher view = request.getRequestDispatcher("ErrorPage");
+			//view.include(request, response);
+			//return;
+			else if (employeeId.isEmpty() || employeeName.isEmpty() || deptname.isEmpty() || empPassword.isEmpty()) 
+		{
+			RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+			out.println("<font color=red>Please fill all the fields</font>");
+			rd.include(request, response);
+		} 
+		if (errorMsgs.isEmpty()) {
+	
+			// Perform business logic
+			User user=new User(empid,employeeName,email,empPassword,deptname,role_type);
+			userrepository.add(user);
+			// Store the new user in the request-scope
+			request.setAttribute("user", user);
+			request.getRequestDispatcher(getServletContext().getInitParameter("views")+"success.jsp").forward(request, response); 
+			}
+		
+		
+	
+}

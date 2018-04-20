@@ -1,0 +1,10 @@
+package com.niit.skillmapper.dao;
+
+import com.niit.skillmapper.model.Skills;
+
+public interface SkillDAO {
+	boolean add(Skills skill);
+	boolean delete(String email);
+	boolean update(Skills skill);
+	Skills search(String keywords);
+}

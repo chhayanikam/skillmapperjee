@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+E:\SkillMapper\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+92950243.index
+3030294659.index
+2767240490.index
+485940484.index
+2872096763.index
+2704173720.index

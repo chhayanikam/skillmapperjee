@@ -1,0 +1,37 @@
+package com.niit.skillmapper.repository;
+
+import java.sql.Connection;
+
+import com.niit.skillmapper.dao.SkillDAO;
+import com.niit.skillmapper.model.Skills;
+import com.niit.skillmapper.utility.DbConnect;
+
+public class SkillRepository implements SkillDAO {
+
+	DbConnect db;
+	Connection con;
+	@Override
+	public boolean add(Skills skill) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Skills skill) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Skills search(String keywords) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

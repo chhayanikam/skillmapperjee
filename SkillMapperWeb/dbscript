@@ -1,0 +1,40 @@
+create table userinfo
+(
+employeeid varchar2(5) primary key,
+employeename varchar2(30) not null,
+email varchar2(30) not null,
+emppassword varchar2(30) ,
+role_type varchar2(30),
+deptname varchar2(30)
+)
+================================
+create table userprofile
+(
+profileid number(5) primary key,
+employeeid number(5) references userinfo(employeeid),
+email varchar2(30) not null,
+city varchar2(30),
+region varchar2(20),
+qualification varchar2(30),
+supervisorname varchar2(30),
+profileviews number(2),
+profileselected number(2),
+profilephoto VARCHAR2(30)
+)
+===============================
+=================================
+create table skills
+(
+skillid number(2),
+employeeid number(5) ,
+skilltype varchar2(30),
+skilldesc varchar2(100) ,
+certifications varchar2(40),
+teachinghrs number(3),
+studentstrained number(4),
+feedbackrating number(2),
+constraint empfk foreign key(employeeid)  references userinfo(employeeid)
+)
+
+======================================
+

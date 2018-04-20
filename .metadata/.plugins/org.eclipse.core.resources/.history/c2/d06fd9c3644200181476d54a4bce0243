@@ -1,0 +1,24 @@
+package com.niit.skillmapper.repository;
+import java.sql.*;
+import com.niit.skillmapper.utility.DbConnect;
+
+public class UserRepository {
+	DbConnect db = new DbConnect();
+
+	public boolean authenticate(String email, String password) {
+		String query="select * from UserInfo where email=? and emppassword=?";
+		
+		try {
+			db.connectDatabase();
+			ResultSet rs=db.executeQuery(query);
+			if(rs.getRow()==1)
+				return true;
+			else 
+				return false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+}

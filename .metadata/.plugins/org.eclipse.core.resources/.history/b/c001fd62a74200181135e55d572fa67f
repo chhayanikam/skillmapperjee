@@ -1,0 +1,89 @@
+package com.niit.skillmapper.repository;
+
+import java.sql.*;
+
+import com.niit.skillmapper.dao.UserDAO;
+import com.niit.skillmapper.model.User;
+import com.niit.skillmapper.utility.DbConnect;
+
+public class UserRepository implements UserDAO {
+	
+	
+	DbConnect db = new DbConnect();
+
+	public boolean authenticate(String email, String password) {
+		Connection con = db.getConnection();
+
+		String query = "select * from UserInfo where email='" + email + "' and emppassword='" + password + "'";
+
+		try {
+			//db.connectDatabase();
+			ResultSet rs = db.executeQuery(con, query);
+			if (rs.getRow() == 1)
+				return true;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+
+		}
+		return true;
+	}
+
+	@Override
+	public boolean getByEmail(String email) {
+		boolean result = false;
+		Connection con = db.getConnection();
+
+		String query = "select * from UserInfo where email=?";
+		try {
+			PreparedStatement pstmt = con.prepareStatement(query);
+			pstmt.setString(1, email);
+
+			db.getConnection();
+			ResultSet rs = db.executeQuery(con, query);
+			if (rs.getRow() == 1)
+				result = true;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = false;
+		}
+		return result;
+
+	}
+	
+	@Override
+	public boolean add(User user) {		
+        try {
+            Connection con = db.getConnection();
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO userinfo (employeeid, employeename,email,emppassword,role_type,deptname)"
+                    		+ " values (?, ?, ?,?,?,?)");
+            stmt.setInt(1, user.getEmployeeId());
+            stmt.setString(2, user.getEmployeeName());
+            stmt.setString(3, user.getEmail());
+            stmt.setString(4, user.getEmpPassword());
+            stmt.setString(5, user.getRole_type());
+            stmt.setString(5, user.getDeptname());
+            stmt.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            
+        }
+		return false;
+	}
+
+	@Override
+	public boolean delete(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

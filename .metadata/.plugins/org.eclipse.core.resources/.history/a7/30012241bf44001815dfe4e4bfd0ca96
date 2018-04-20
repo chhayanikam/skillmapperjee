@@ -1,0 +1,32 @@
+package com.niit.skillmapper.test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import com.niit.skillmapper.model.Skills;
+import com.niit.skillmapper.repository.SkillRepository;;
+
+public class TestSkillRepository {
+	SkillRepository skillrepository;
+
+	@Before
+	public void setUp() throws Exception {
+		skillrepository = new SkillRepository();
+	}
+	
+	@Test
+	public void addSkillTest() {
+		Skills skill=new Skills();
+		skill.setEmployeeid(18775);
+		skill.setCertifications("MS SQL:OCJP");;
+		skill.setFeedbackRating(5);
+		skill.setSkillDesc("Java");
+		skill.setStudentsTrained(1900);
+		skill.setTeachingHrs(19000);
+		assertEquals("Failed to add the skill!", true, skillrepository.add(skill));
+	}
+
+}

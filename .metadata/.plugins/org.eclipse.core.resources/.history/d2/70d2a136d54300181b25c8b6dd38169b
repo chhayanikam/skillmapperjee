@@ -1,0 +1,111 @@
+package com.niit.skillmapper.model;
+
+public class Profile {
+	private int profileId;
+	private String email;
+	private String city;
+	private String region;
+	private String skillType;
+	private String skillDesc;
+	private String certifications;
+	private int teachingHrs;
+	private int studentstrained;
+	private int feedbackrating;
+	private String qualification;
+	private String supervisorname;
+	private int profileviews;
+	private int profileselected;
+	private String profilephoto ;
+	public int getProfileId() {
+		return profileId;
+	}
+	public void setProfileId(int profileId) {
+		this.profileId = profileId;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getRegion() {
+		return region;
+	}
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	public String getSkillType() {
+		return skillType;
+	}
+	public void setSkillType(String skillType) {
+		this.skillType = skillType;
+	}
+	public String getSkillDesc() {
+		return skillDesc;
+	}
+	public void setSkillDesc(String skillDesc) {
+		this.skillDesc = skillDesc;
+	}
+	public String getCertifications() {
+		return certifications;
+	}
+	public void setCertifications(String certifications) {
+		this.certifications = certifications;
+	}
+	public int getTeachingHrs() {
+		return teachingHrs;
+	}
+	public void setTeachingHrs(int teachingHrs) {
+		this.teachingHrs = teachingHrs;
+	}
+	public int getStudentstrained() {
+		return studentstrained;
+	}
+	public void setStudentstrained(int studentstrained) {
+		this.studentstrained = studentstrained;
+	}
+	public int getFeedbackrating() {
+		return feedbackrating;
+	}
+	public void setFeedbackrating(int feedbackrating) {
+		this.feedbackrating = feedbackrating;
+	}
+	public String getQualification() {
+		return qualification;
+	}
+	public void setQualification(String qualification) {
+		this.qualification = qualification;
+	}
+	public String getSupervisorname() {
+		return supervisorname;
+	}
+	public void setSupervisorname(String supervisorname) {
+		this.supervisorname = supervisorname;
+	}
+	public int getProfileviews() {
+		return profileviews;
+	}
+	public void setProfileviews(int profileviews) {
+		this.profileviews = profileviews;
+	}
+	public int getProfileselected() {
+		return profileselected;
+	}
+	public void setProfileselected(int profileselected) {
+		this.profileselected = profileselected;
+	}
+	public String getProfilephoto() {
+		return profilephoto;
+	}
+	public void setProfilephoto(String profilephoto) {
+		this.profilephoto = profilephoto;
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+#properties file to connect any database
+#properties file to connect any database
+dbpassword=sa
+database=jdbc:h2:~/skillmapper
+dbuser=sa
+driver=org.h2.Driver

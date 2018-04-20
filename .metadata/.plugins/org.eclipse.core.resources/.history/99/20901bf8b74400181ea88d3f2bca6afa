@@ -1,0 +1,17 @@
+package com.niit.skillmapper.test;
+
+import org.junit.Before;
+
+import com.niit.skillmapper.repository.ProfileRepository;
+
+public class TestProfileRepository {
+
+	ProfileRepository profilerepository;
+
+	@Before
+	public void setUp() throws Exception {
+		profilerepository = new ProfileRepository();
+	}
+	
+
+}

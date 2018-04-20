@@ -1,0 +1,20 @@
+package com.niit.skillmapper.test;
+import static org.junit.Assert.assertEquals;
+
+import java.util.Date;
+
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+
+
+public class UserRepositoryTest {
+
+	@Test
+	@Ignore
+	@Test // GREEN 
+	 public void ListUserTestCase() {
+	 assertEquals("Successfully fetched the list of users from the table!",1,
+	  userDAO.listUser().size());
+	 }
+}

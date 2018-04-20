@@ -1,0 +1,71 @@
+package com.niit.skillmapper.utility;
+
+import java.sql.*;
+import java.util.*;
+import java.io.*;
+
+public class DbConnect {
+	private String database;
+	private String dbuser;
+	private String dbpassword;
+	
+	// method to load the data from properties file
+	public void readPropertiesFile()
+	{
+		Properties prop = new Properties();
+		InputStream input = null;
+
+		try {
+			input = new FileInputStream("E:\\SkillMapper\\SkillMapperConsole\\config.properties");
+
+			// load a properties file
+			prop.load(input);
+
+			// get the property value and print it out
+			System.out.println(prop.getProperty("database"));
+			System.out.println(prop.getProperty("dbuser"));
+			System.out.println(prop.getProperty("dbpassword"));
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+	public  void connectDatabase() {
+		try {
+			readPropertiesFile();
+			// step1 load the driver class
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			// step2 create the connection object
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");
+
+			// step3 create the statement object
+			Statement stmt = con.createStatement();
+
+			// step4 execute query
+			ResultSet rs = stmt.executeQuery("select * from employees");
+			while (rs.next())
+				System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+
+			// step5 close the connection object
+			con.close();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	public static void main(String args[]) {
+		DbConnect db=new DbConnect();
+		db.connectDatabase();
+	}
+}

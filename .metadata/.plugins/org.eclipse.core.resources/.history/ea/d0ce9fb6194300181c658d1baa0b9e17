@@ -1,0 +1,45 @@
+package com.niit.skillmapper.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+import java.io.*;
+
+/**
+ * Servlet implementation class test2
+ */
+@WebServlet("/test2")
+public class test2 extends HttpServlet {
+	public static Connection prepareConnection() throws ClassNotFoundException, SQLException {
+		String dcn = "org.h2.Driver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String usname = "sa";
+		String pass = "";
+		Class.forName(dcn);
+		return DriverManager.getConnection(url, usname, pass);
+	}
+
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html");
+		PrintWriter out = resp.getWriter();
+
+		try {
+			Connection con = prepareConnection();
+			Statement s=con.createStatement();
+			ResultSet rs=s.executeQuery("select * from employees");
+			out.println("some db data=" + rs.getString(1));
+		} catch (ClassNotFoundException cnfe) {
+			out.println(cnfe);
+		} catch (SQLException sqle) {
+			out.println("<html><head><title>Error!</title><body>");
+			out.println("<b><i>Unable to process try after some time Sql error</i></b>");
+			out.println("</body></html>");
+		} 
+		out.flush();
+		out.close();
+	}
+}

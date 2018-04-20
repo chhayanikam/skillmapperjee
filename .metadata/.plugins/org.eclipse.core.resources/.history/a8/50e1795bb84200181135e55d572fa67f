@@ -1,0 +1,66 @@
+package com.niit.skillmapper.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import com.niit.skillmapper.model.User;
+import com.niit.skillmapper.repository.UserRepository;
+
+public class UserRepositoryTest {
+
+	UserRepository userrepository;
+
+	@Before
+	public void setUp() throws Exception {
+		userrepository = new UserRepository();
+	}
+
+	@Ignore
+	@Test
+	public void testAuthUser() {
+		assertEquals("Failed to validate the user!", true, 
+				userrepository.authenticate("akhil@niit.com", "password"));
+	}
+	
+	@Ignore
+	@Test	
+	public void addUserTest() {
+		User user = new User();
+		user.setEmployeeId(18775);
+		user.setEmployeeName("chhaya");
+		user.setDeptname("CEB");
+		user.setEmail("chhaya.nikam1@niit.com");
+		user.setRole_type("Employee");
+		user.setEmpPassword("password@123");		
+		assertEquals("Failed to add the user!", true, userrepository.add(user));
+	}
+
+	@Ignore
+	@Test
+	public void updateUserTest() {
+		User user = userrepository.getByEmail("chhaya.nikam@niit.com");
+		// provide the new data to update
+        user.setEmployeeId(18775);
+		user.setEmployeeName("chhayanew");
+		user.setDeptname("CEBnew");
+		user.setEmail("chhaya.nikam1new@niit.com");
+		user.setRole_type("Employeenew");
+		user.setEmpPassword("password@124");		
+		assertEquals("Failed to update user!", true, userrepository.update(user));
+	}
+	
+	@Test
+	public void deleteUserTest()
+	{
+	 assertEquals("Failed to delete user!", true, userrepository.delete("akhil@niit.com"));
+	}
+	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

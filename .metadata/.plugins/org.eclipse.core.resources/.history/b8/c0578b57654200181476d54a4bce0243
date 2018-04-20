@@ -1,0 +1,11 @@
+package com.niit.skillmapper.utility;
+import com.niit.skillmapper.repository.UserRepository;
+
+public class Main {
+	UserRepository userrepository;
+
+	public static void main(String args[]) {
+		userrepository=new UserRepository();
+		userrepository.
+	}
+}
