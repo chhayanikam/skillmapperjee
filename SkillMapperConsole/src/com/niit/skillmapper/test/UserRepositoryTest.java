@@ -37,7 +37,7 @@ public class UserRepositoryTest {
 	@Test
 	public void addUserTest() {
 		User user = new User();
-		user.setEmployeeId("18776");
+		user.setEmployeeId(18777);
 		user.setEmployeeName("Riya");
 		user.setDeptname("CEB");
 		user.setEmail("riya@niit.com");
@@ -51,7 +51,7 @@ public class UserRepositoryTest {
 	@Test
 	public void addUserTestFail() {
 		User user = new User();
-		user.setEmployeeId("18776");
+		user.setEmployeeId(18776);
 		user.setEmployeeName("Riya");
 		user.setDeptname("CEB");
 		user.setEmail("riya@niit.com");
@@ -59,28 +59,12 @@ public class UserRepositoryTest {
 		user.setEmpPassword("password@123");
 		assertEquals("Failed to add the user!", true, userrepository.add(user));
 	}
-
-	// pass test
-	@Ignore
-	@Test
-	public void deleteUserTest() {
-		assertEquals("Failed to delete user!", true, userrepository.delete("chhaya.nikam@niit.com"));
-	}
-
-	// fail test
-	@Ignore
-	@Test
-	public void deleteUserTestFail() {
-		assertEquals("Failed to delete user!", true, userrepository.delete("chh.nikam@niit.com"));
-	}
-
-
 	@Test
 	public void updateUserTest() {		
 		User euser=new User();		
 		euser.setEmployeeName("Riyanew");
 		euser.setDeptname("CEBnew");
-		euser.setEmail("riya@niit1.com");
+		euser.setEmail("riya@niit.com");
 		euser.setRole_type("Trainer1");
 		euser.setEmpPassword("password1@123");
 		assertEquals("Failed to update the user!", true, userrepository.update(euser));

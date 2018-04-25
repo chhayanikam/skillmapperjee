@@ -9,6 +9,7 @@ public class DbConnect {
 	private String dbuser;
 	private String dbpassword;
 	private String driver;
+	// make connection as static
 	Connection con;
 
 	
@@ -37,7 +38,7 @@ public class DbConnect {
 		return dbpassword;
 	}
 
-	// convert this to a static class
+	// convert this to a static class then you can use getAsStream method
 	// method to load the data from properties file
 	public  void readPropertiesFile() {
 		Properties prop = new Properties();
@@ -86,5 +87,6 @@ public class DbConnect {
 	}
 
 	
+	// create a method to close the connection
 	
 }

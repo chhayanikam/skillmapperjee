@@ -3,7 +3,7 @@ import java.util.HashMap;
 import com.niit.skillmapper.validator.*;
 
 public class User extends Validator{
-	private String employeeId;
+	private int employeeId;
 	private String employeeName;
 	private String email;
 	private String empPassword;	
@@ -12,10 +12,10 @@ public class User extends Validator{
 	public User() {		
 		errorMessage=new HashMap<String,String>();
 	}
-	public String getEmployeeId() {
+	public int getEmployeeId() {
 		return employeeId;
 	}
-	public void setEmployeeId(String employeeId) {
+	public void setEmployeeId(int employeeId) {
 		this.employeeId = employeeId;
 	}
 	public String getEmployeeName() {
@@ -49,7 +49,7 @@ public class User extends Validator{
 		this.role_type = role_type;
 	}
 	
-	public User(String employeeId, String employeeName, String email, String empPassword, String deptname,
+	public User(int employeeId, String employeeName, String email, String empPassword, String deptname,
 			String role_type) {
 		super();
 		this.employeeId = employeeId;

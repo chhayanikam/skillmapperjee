@@ -42,15 +42,15 @@ public class RegistrationController extends HttpServlet {
 		// send the ErrorPage view.
 		request.setAttribute("errorMsgs", errorMsgs);
 
-		String employeeId = request.getParameter("employeeId").trim();
+		int employeeId = Integer.parseInt(request.getParameter("employeeId").trim());
 		String employeeName = request.getParameter("employeeName").trim();
 		String empPassword = request.getParameter("emppassword").trim();
 		String email = request.getParameter("email").trim();
 		String deptname = request.getParameter("deptname").trim();
 		String role_type = request.getParameter("role_type").trim();
 		System.out.println(employeeId + employeeName + empPassword + deptname + email + role_type);
-		int empid = Integer.parseInt(employeeId);
-		User user = new User();
+		//int empid = Integer.parseInt(employeeId);
+		User user = new User(employeeId,employeeName,email,empPassword,deptname,role_type);
 		user.setEmployeeId(employeeId);
 		user.setEmployeeName(employeeName);
 		user.setEmpPassword(empPassword);
@@ -58,18 +58,19 @@ public class RegistrationController extends HttpServlet {
 		user.setDeptname(deptname);
 		user.setRole_type(role_type);
 		
-		//user.validate();
-		userrepository.add(user);
+		
 		HashMap LoginErrors = new HashMap<String, String>();
 		LoginErrors = user.validate();
+		
 		if (LoginErrors.size() > 0)
 		{
 			session.setAttribute("errors", LoginErrors);
-			request.getRequestDispatcher(getServletContext().getInitParameter("views") + "login.jsp")
+			request.getRequestDispatcher(getServletContext().getInitParameter("views") + "error.jsp")
 			        .include(request,response);
 		}
 		else
 		{
+			userrepository.add(user);
 			request.getRequestDispatcher(getServletContext().getInitParameter("views") + "success.jsp")
 	        .include(request,response);
 			

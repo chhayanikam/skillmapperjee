@@ -1,0 +1,13 @@
+<h2>All Employees</h2>
+<form>
+<table *ngFor="let employee of employees"  border="1">
+<tr>
+       <td>{{employee.employeeId}} </td>
+       <td>{{employee.employeeName}}</td>
+       <td>{{employee.email}} </td>
+       <td> {{employee.deptname}} </td>
+       <td>{{employee.role_type}}</td>
+       <td><button class="delete" title="Delete Employee"    (click)="deleteemployee(employee)">x</button></td>
+ </tr>
+</table>
+</form>

@@ -17,16 +17,16 @@ div.ex {
 <body>
 	<h1>Registration Form</h1>
 	<div class="ex">
-		<form action="ProfileController" method="post">
-			<table style="with: 50%">				
+		<form action="ProfileController" method="post" enctype="multipart/form-data">
+			<table style="with: 50%">	
+				<tr>
+					<td>Profile Id</td>
+					<td><input type="text" name="profileId" /></td>
+				</tr>			
 				<tr>
 					<td>Employee Id</td>
 					<td><input type="text" name="employeeId" /></td>
-				</tr>
-				<tr>
-					<td>Employee Name</td>
-					<td><input type="text" name="employeename" /></td>
-				</tr>
+				</tr>				
 				<tr>
 					<td>City</td>
 					<td><input type="text" name="city" /></td>

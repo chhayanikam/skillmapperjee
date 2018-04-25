@@ -1,11 +1,10 @@
 package com.niit.skillmapper.model;
 
-import java.beans.Transient;
+import com.niit.skillmapper.validator.Validator;
 
-public class Profile {
+public class Profile extends Validator{
 	private int profileId;
 	private int employeeId;	
-	private String email;
 	private String city;
 	private String region;
 	private String qualification;
@@ -14,6 +13,10 @@ public class Profile {
 	private int profileselected;
 	private String profilephoto ;
 	
+	public Profile() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getProfileId() {
 		return profileId;
 	}
@@ -26,12 +29,7 @@ public class Profile {
 	public void setEmployeeId(int employeeId) {
 		this.employeeId = employeeId;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	public String getCity() {
 		return city;
 	}
@@ -74,5 +72,20 @@ public class Profile {
 	public void setProfilephoto(String profilephoto) {
 		this.profilephoto = profilephoto;
 	}
+	public Profile(int profileId, int employeeId, String city, String region, String qualification,
+			String supervisorname, int profileviews, int profileselected, String profilephoto) {
+		super();
+		this.profileId = profileId;
+		this.employeeId = employeeId;
+		this.city = city;
+		this.region = region;
+		this.qualification = qualification;
+		this.supervisorname = supervisorname;
+		this.profileviews = profileviews;
+		this.profileselected = profileselected;
+		this.profilephoto = profilephoto;
+	}
+	
+	
 	
 }

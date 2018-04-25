@@ -1,8 +1,8 @@
 create table userinfo
 (
-employeeid number(5) primary key,
+employeeid number(6) primary key,
 employeename varchar2(30) not null,
-email varchar2(30) not null,
+email varchar2(30) unique not null,
 emppassword varchar2(30) ,
 role_type varchar2(30),
 deptname varchar2(30)
@@ -10,12 +10,13 @@ deptname varchar2(30)
 ================================
 create table skills
 (
-employeeid number(5) ,
+skillid identity,
+employeeid number(6) unique,
 skilltype varchar2(30),
 skilldesc varchar2(100) ,
-certifications varchar2(40),
-teachinghrs number(3),
-studentstrained number(4),
+certifications varchar2(100),
+teachinghrs number(5),
+studentstrained number(5),
 feedbackrating number(2),
 constraint empfk foreign key(employeeid)  references userinfo(employeeid)
 )
@@ -24,7 +25,7 @@ constraint empfk foreign key(employeeid)  references userinfo(employeeid)
 
 create table userprofile
 (
-profileid number(5) primary key,
+profileid identity,
 employeeid number(5) references userinfo(employeeid),
 city varchar2(30),
 region varchar2(20),

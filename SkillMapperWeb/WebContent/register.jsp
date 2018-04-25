@@ -21,19 +21,19 @@ div.ex1 {
 			<table style="with: 50%">				
 				<tr>
 					<td>Employee Id</td>
-					<td><input type="text" name="employeeId" /></td>
+					<td><input type="text" name="employeeId" required/></td>
 				</tr>
 				<tr>
 					<td>Employee Name</td>
-					<td><input type="text" name="employeeName" /></td>
+					<td><input type="text" name="employeeName" required/></td>
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><input type="text" name="email" /></td>
+					<td><input type="text" name="email" required/></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="emppassword" /></td>
+					<td><input type="password" name="emppassword" required/></td>
 				</tr>
 				<tr>
 					<td>Role Type</td>

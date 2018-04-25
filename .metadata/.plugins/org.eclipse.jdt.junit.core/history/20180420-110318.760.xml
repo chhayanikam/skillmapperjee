@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestSkillRepository" project="SkillMapperConsole" tests="3" started="3" failures="0" errors="0" ignored="2">
-  <testsuite name="com.niit.skillmapper.test.TestSkillRepository" time="0.125">
-    <testcase name="searchSkillTest" classname="com.niit.skillmapper.test.TestSkillRepository" time="0.125"/>
-    <testcase name="FailaddSkillTest" classname="com.niit.skillmapper.test.TestSkillRepository" time="0.0" ignored="true"/>
-    <testcase name="addSkillTest" classname="com.niit.skillmapper.test.TestSkillRepository" time="0.0" ignored="true"/>
-  </testsuite>
-</testrun>

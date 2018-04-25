@@ -21,7 +21,7 @@ public class TestProfileRepository {
 	@Test
 	public void addProfileTest() {
 		Profile profile=new Profile();
-		profile.setProfileId(1);
+		//profile.setProfileId(1);
 		profile.setEmployeeId(18776);
 		profile.setCity("Mumbai");		
 		profile.setProfilephoto("p1.jpg");

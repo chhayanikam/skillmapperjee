@@ -1,6 +1,8 @@
 package com.niit.skillmapper.model;
 
-public class Skills {	
+import com.niit.skillmapper.validator.Validator;
+
+public class Skills extends Validator{	
 	private int employeeid;
 	private String skillType;
 	private String skillDesc;

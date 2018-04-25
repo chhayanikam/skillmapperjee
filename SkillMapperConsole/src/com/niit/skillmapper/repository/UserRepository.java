@@ -45,7 +45,7 @@ public class UserRepository implements UserDAO {
 			if (!rs.first()) {
 				return null;
 			} else {
-				user.setEmployeeId(rs.getString(1));
+				user.setEmployeeId(rs.getInt(1));
 				user.setEmployeeName(rs.getString(2));
 
 				user.setEmail(rs.getString(3));
@@ -70,7 +70,7 @@ public class UserRepository implements UserDAO {
 			PreparedStatement stmt = con.prepareStatement(
 					"INSERT INTO userinfo (employeeid, employeename,email,emppassword,role_type,deptname)"
 							+ " values (?, ?, ?,?,?,?)");
-			stmt.setString(1, user.getEmployeeId());
+			stmt.setInt(1, user.getEmployeeId());
 			stmt.setString(2, user.getEmployeeName());
 			stmt.setString(3, user.getEmail());
 			stmt.setString(4, user.getEmpPassword());
@@ -87,11 +87,11 @@ public class UserRepository implements UserDAO {
 	}
 
 	@Override
-	public boolean delete(String email) {
+	public boolean delete(int empid) {
 		try {
 			Connection con = db.getConnection();
-			PreparedStatement stmt = con.prepareStatement("DELETE FROM userinfo WHERE email=?");
-			stmt.setString(1, email);
+			PreparedStatement stmt = con.prepareStatement("DELETE FROM userinfo WHERE empid=?");
+			stmt.setInt(1, empid);
 			stmt.executeUpdate();
 			con.close();
 			return true;
@@ -117,7 +117,7 @@ public class UserRepository implements UserDAO {
 			int res = stmt.executeUpdate();
 			System.out.println(stmt);
 			System.out.println("res="+res);
-			if (res == 1)
+			if (res>0)
 				res1 = true;
 			return res1;
 		} catch (SQLException e) {
@@ -128,4 +128,5 @@ public class UserRepository implements UserDAO {
 		
 	}
 
+	
 }

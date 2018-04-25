@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet
 		LoginErrors = user.validate();
 		if (LoginErrors.size() > 0) {
 			session.setAttribute("errors", LoginErrors);
-			request.getRequestDispatcher(getServletContext().getInitParameter("views") + "login.jsp").include(request,
+			request.getRequestDispatcher(getServletContext().getInitParameter("views") + "error.jsp").include(request,
 					response);
 		}
 		else
